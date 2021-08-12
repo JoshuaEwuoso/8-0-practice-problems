@@ -1,3 +1,4 @@
+const pets = require("./pets-data.js");
 const petsData = require("./pets-data.js");
 
 /**
@@ -11,7 +12,17 @@ const petsData = require("./pets-data.js");
  * > ["Deloba", "Tuba", "Percy", "Monkey", "Gia", "Gumby"]
  */
 
-function getAllPetNames() {}
+function getAllPetNames(pets) {
+    let namesArr = [];
+    let petNames;
+    for(let pet of pets){
+        petNames = pet.petName;
+        namesArr.push(petNames);
+    }
+    console.log(namesArr)
+    return namesArr
+}
+getAllPetNames(pets)
 
 /**
  * getAllCaretakerNames()
@@ -24,7 +35,17 @@ function getAllPetNames() {}
  * > ["Sam", "Ari", "Nicole", "Katie", "Steven", "John"]
  */
 
-function getAllCaretakerNames() {}
+function getAllCaretakerNames(careTakers) {
+    let careArr = [];
+    let careTake = '';
+    for(let i = 0; i < careTakers.length;i++){
+        careTake = careTakers[i].caretakerName;
+        careArr.push(careTake);
+    }
+    console.log(careArr)
+    return careArr
+}
+getAllCaretakerNames(pets)
 
 /**
  * getAllFavoriteFoods()
@@ -37,7 +58,17 @@ function getAllCaretakerNames() {}
  * > ["watermelon", "mealworms", "fish", "dog food", "salami", "bacon"]
  */
 
-function getAllFavoriteFoods() {}
+function getAllFavoriteFoods(pets) {
+    let arrOfFoods = [];
+    let favFoods;
+    for(let food of pets){
+        favFoods = food.favoriteFood;
+        arrOfFoods.push(favFoods);
+    }
+    console.log(arrOfFoods)
+    return arrOfFoods
+}
+getAllFavoriteFoods(pets)
 
 /**
  * getAllPetSpecies()
@@ -50,7 +81,17 @@ function getAllFavoriteFoods() {}
  * > ["dog", "spotted gecko", "cat", "cat", "dog", "cat"]
  */
 
-function getAllPetSpecies() {}
+function getAllPetSpecies(species) {
+    let arrOfSpecies = [];
+    let animalType;
+    for(let speciesType of species){
+        animalType = speciesType.species;
+        arrOfSpecies.push(animalType);
+    }
+    console.log(arrOfSpecies)
+    return arrOfSpecies
+}
+getAllPetSpecies(pets)
 
 /**
  * getAllPetAges()
@@ -63,7 +104,17 @@ function getAllPetSpecies() {}
  * > [8, 2, 1, 10, 3, 6]
  */
 
-function getAllPetAges() {}
+function getAllPetAges(ages) {
+    let animalAges = [];
+    let age;
+    for (let i = 0; i < ages.length; i++){
+        age = ages[i].age;
+        animalAges.push(age);
+    }
+    console.log(animalAges)
+    return animalAges
+}
+getAllPetAges(pets)
 
 /**
  * totalAllPetAges()
@@ -76,7 +127,17 @@ function getAllPetAges() {}
  * > 30
  */
 
-function totalAllPetAges() {}
+function totalAllPetAges(ages) {
+    let petAges = [];
+    let totalAge = 0;
+    for(let i = 0; i < ages.length; i++){
+        totalAge += ages[i].age;
+        petAges.push(totalAge);
+    }
+    console.log(totalAge)
+    return totalAge
+}
+totalAllPetAges(pets)
 
 /**
  * averageAllPetAges()
@@ -89,7 +150,18 @@ function totalAllPetAges() {}
  * > 5
  */
 
-function averageAllPetAges() {}
+function averageAllPetAges(age) {
+    let averageAge = 0;
+    let ageLength = [];
+for(let ages of age){
+    averageAge += ages.age;
+    ageLength.push(ages.age);
+}
+    console.log(averageAge/ageLength.length)
+    return averageAge/ageLength.length
+}
+averageAllPetAges(pets)
+
 
 /**
  * averageAllCaretakerAges()
@@ -102,4 +174,22 @@ function averageAllPetAges() {}
  * > 32.3333333
  */
 
-function averageAllCaretakerAges() {}
+function averageAllCaretakerAges(caretakerAge) {
+    let arr = [];
+    let caretakerAges = "";
+    for(let i = 0; i < caretakerAge.length; i++){
+        caretakerAges = caretakerAge[i].caretakerAge;
+        arr.push(caretakerAges);
+        arr = arr.map(Number);
+    }
+    let totalAge = 0;
+    let arr1 = [];
+
+    for(let i = 0; i < arr.length; i++){
+      totalAge += arr[i];
+      arr1.push(arr[i])
+    }
+    console.log(totalAge/arr1.length)
+    return totalAge/arr1.length
+}
+averageAllCaretakerAges(pets)
